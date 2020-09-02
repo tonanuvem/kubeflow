@@ -6,9 +6,9 @@ tar -zxvf kfctl.tar.gz && export PATH=$PWD:$PATH && export KF_NAME=Kubeflow && e
 export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_k8s_istio.v1.0.2.yaml"
 mkdir -p ${KF_DIR} && cd ${KF_DIR}
 kfctl apply -V -f ${CONFIG_URI}
-echo "\n\nkubectl get pod --all-namespaces"
+echo " $ kubectl get pod --all-namespaces"
 kubectl get pod --all-namespaces
-echo "\n\nAcessar o UI do Kubeflow"
+echo " $ Acessar o UI do Kubeflow"
 export INGRESS_HOST=$(curl -s checkip.amazonaws.com)
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
-echo "Acessar: http://$INGRESS_HOST:$INGRESS_PORT"
+echo " $ Acessar: http://$INGRESS_HOST:$INGRESS_PORT"
