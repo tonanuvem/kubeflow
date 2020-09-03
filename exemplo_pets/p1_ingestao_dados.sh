@@ -6,11 +6,21 @@ cd examples/object_detection
 
 # Ksonnet (Kubernetes config easy)
 # wget https://github.com/ksonnet/ksonnet/releases/download/v0.13.1/ks_0.13.1_linux_amd64.tar.gz
-export KS_VER=ks_0.12.0_linux_amd64
-wget -O /tmp/$KS_VER.tar.gz https://github.com/ksonnet/ksonnet/releases/download/v0.12.0/$KS_VER.tar.gz
+export KS_VER=ks_0.13.1_linux_amd64
+export DIR_KS_VER=v0.13.1
+wget -O /tmp/$KS_VER.tar.gz https://github.com/ksonnet/ksonnet/releases/download/$DIR_KS_VER/$KS_VER.tar.gz
 mkdir -p ${HOME}/bin
 tar -xvf /tmp/$KS_VER.tar.gz -C ${HOME}/bin
 export PATH=$PATH:${HOME}/bin/$KS_VER
+
+KUBECONFIG="${KUBECONFIG:-$HOME/.kube/config}"
+#APP_NAME=fiap-kubeflow
+#ks init ${APP_NAME}
+#cd ${APP_NAME}
+# Autogenerate a basic manifest
+#ks generate deployed-service guestbook-ui \
+#  --image gcr.io/heptio-images/ks-guestbook-demo:0.1 \
+#  --type ClusterIP
 
 cd ks-app
 ENV=default
