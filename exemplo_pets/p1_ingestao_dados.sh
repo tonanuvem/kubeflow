@@ -1,5 +1,9 @@
 # Preparacao:
 
+# https://github.com/kubeflow/examples/tree/master/object_detection
+git clone https://github.com/kubeflow/examples.git
+cd examples/object_detection
+
 # Ksonnet (Kubernetes config easy)
 # wget https://github.com/ksonnet/ksonnet/releases/download/v0.13.1/ks_0.13.1_linux_amd64.tar.gz
 export KS_VER=ks_0.12.0_linux_amd64
