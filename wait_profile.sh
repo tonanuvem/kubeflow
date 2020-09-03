@@ -8,3 +8,4 @@ done
 echo "Pronto."
 echo " $ kubectl get pod -n kubeflow | grep profile"
 kubectl get pod -n kubeflow | grep profile
+curl checkip.amazonaws.com
