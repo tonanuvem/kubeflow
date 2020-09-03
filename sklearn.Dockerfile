@@ -2,7 +2,7 @@
 # rodar direto : 
 #  python -m sklearnserver --model_dir . --model_name svm
 # rodar no docker :
-#  docker build -t d -f sklearn.Dockerfile .
+#  docker build -t fiapimgskl -f sklearn.Dockerfile .
 #  docker run --name fiapskl --rm -p 8081:8080 fiapsklearnserver -d
 
 FROM python:3.7-slim
