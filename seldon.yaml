@@ -56,7 +56,7 @@ spec:
       children: []
       implementation: SKLEARN_SERVER
 #      modelUri: gs://seldon-models/sklearn/iris
-      storageUri: "pvc://workspace-nb1//Kubeflow/exemplo"
+      storageUri: "pvc://workspace-nb1/kubeflow/exemplo"
       name: classifier
     name: default
     replicas: 1
