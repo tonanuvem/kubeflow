@@ -34,3 +34,33 @@ spec:
       type: MODEL
     name: example
     replicas: 1
+#---
+#apiVersion: "serving.kubeflow.org/v1alpha2"
+#kind: "InferenceService"
+#metadata:
+#  name: "fiap-modelo"
+#spec:
+#  default:
+#    predictor:
+#      tensorflow:
+#        storageUri: "pvc://${PVC_NAME}/export"
+---
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: sklearn
+spec:
+  name: fiap-modelo
+  predictors:
+  - graph:
+      children: []
+      implementation: SKLEARN_SERVER
+#      modelUri: gs://seldon-models/sklearn/iris
+      storageUri: "pvc://workspace-nb1//Kubeflow/exemplo"
+      name: classifier
+    name: default
+    replicas: 1
+    svcOrchSpec: 
+      env: 
+      - name: SELDON_LOG_LEVEL
+        value: DEBUG
