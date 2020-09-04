@@ -11,8 +11,14 @@ kubectl get pod --all-namespaces
 echo " > Acessar o UI do Kubeflow"
 export INGRESS_HOST=$(curl -s checkip.amazonaws.com)
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
-echo "Verificando se o PROFILER está RUNNING : $ kubectl get pod -n kubeflow | grep profile"
-chmod +x wait_profile.sh
-./wait_profile.sh
+echo "Verificando se o PROFILE está RUNNING : $ kubectl get pod -n kubeflow | grep profile"
+echo "Aguardando profiles-deployment (geralmente 4 min): 2/2 Running"
+while [ "$(kubectl get pod -n kubeflow | grep profile | grep Running | wc -l)" != "1" ]; do
+  printf "."
+  sleep 1
+done
+echo "Pronto."
+echo " $ kubectl get pod -n kubeflow | grep profile"
+kubectl get pod -n kubeflow | grep profile
 echo "Acessar: http://$INGRESS_HOST:$INGRESS_PORT"
 echo "Verificar os pods existentes : $ kubectl get pod --all-namespaces"
