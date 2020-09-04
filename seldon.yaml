@@ -45,7 +45,7 @@ spec:
 #      tensorflow:
 #        storageUri: "pvc://${PVC_NAME}/export"
 ---
-apiVersion: machinelearning.seldon.io/v1alpha2
+apiVersion: machinelearning.seldon.io/v1
 kind: SeldonDeployment
 metadata:
   name: sklearn
@@ -54,6 +54,8 @@ spec:
   predictors:
   - graph:
       children: []
+      endpoint:
+        type: REST
       implementation: SKLEARN_SERVER
 #      modelUri: gs://seldon-models/sklearn/iris
       storageUri: "pvc://workspace-nb1/kubeflow/exemplo"
