@@ -48,14 +48,15 @@ spec:
 apiVersion: machinelearning.seldon.io/v1
 kind: SeldonDeployment
 metadata:
-  name: sklearn
-spec:
   name: fiap-modelo
+  namespace: seldon
+spec:
+  name: fiap
   predictors:
   - graph:
-      children: []
-      endpoint:
-        type: REST
+#      children: []
+#      endpoint:
+#        type: REST
       implementation: SKLEARN_SERVER
 #      modelUri: gs://seldon-models/sklearn/iris
       storageUri: "pvc://workspace-nb1/kubeflow/exemplo"
@@ -66,3 +67,18 @@ spec:
       env: 
       - name: SELDON_LOG_LEVEL
         value: DEBUG
+---
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: iris-model
+  namespace: seldon
+spec:
+  name: iris
+  predictors:
+  - graph:
+      implementation: SKLEARN_SERVER
+      modelUri: gs://seldon-models/sklearn/iris
+      name: classifier
+    name: default
+    replicas: 1
