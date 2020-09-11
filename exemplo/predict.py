@@ -41,6 +41,9 @@ class MakePrediction(Resource):
             'VALORES': dados,
             '_PERFIL_CALCULADO': prediction
         })
+    
+    def get():
+        return "API do Modelo está online. Para fazer uma previsão, deve-se enviar um POST."
 
 # curl -v -X POST "http://localhost:5000/predict" -H "accept: */*" -H "Content-Type: application/json" -d @./dados.json
 api.add_resource(MakePrediction, '/predict')
