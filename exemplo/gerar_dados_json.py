@@ -14,4 +14,4 @@ payload = {
 with open('dados.json', 'w', encoding='utf-8') as f:
     json.dump(payload, f, ensure_ascii=False, indent=4)
 print("\n Arquivo dados.json salvo. Payload de dados a ser classificada:")
-print(json.dumps(scoring_payload, indent=4))
+print(json.dumps(payload, indent=4))
