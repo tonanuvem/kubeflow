@@ -9,3 +9,5 @@ Config Dominio com 'sed' & 'kubectl apply --filename config-domain.yaml: https:/
 Videos Kubecon : https://github.com/cloudyuga/kubecon19-eu
 
 Katacoda exemplos : https://katacoda.com/kubeflow/
+
+Deploy: https://github.com/kubeflow/kfserving/tree/master/docs/samples/sklearn
