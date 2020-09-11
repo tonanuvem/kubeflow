@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 #from model.Train import train_model
-from sklearn.externals import joblib
+import joblib
 
 app = Flask(__name__)
 api = Api(app)
