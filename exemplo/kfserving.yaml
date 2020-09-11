@@ -9,7 +9,7 @@ spec:
     predictor:
       custom:
         container:
-          image: tonanuvem/kfserving-perfil-aluno-custom-model
+          image: tonanuvem/ml-perfil-aluno-custom-model
           resources:
             requests:
               memory: "4096Mi"
