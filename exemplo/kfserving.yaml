@@ -10,3 +10,5 @@ spec:
       custom:
         container:
           image: tonanuvem/ml-perfil-aluno-custom-model 
+          ports:
+            - containerPort: 5000
