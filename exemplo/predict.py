@@ -44,12 +44,11 @@ class MakePrediction(Resource):
     
     @staticmethod
     def get():
-        return "API do Modelo está online. Para fazer uma previsão, deve-se enviar um POST."
+        return "API do Modelo esta online. Para fazer uma previsao, deve-se enviar um POST."
 
 # curl -v -X POST "http://localhost:5000/predict" -H "accept: */*" -H "Content-Type: application/json" -d @./dados.json
 api.add_resource(MakePrediction, '/predict')
-
+api.add_resource(MakePrediction, "/")
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
