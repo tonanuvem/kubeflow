@@ -49,5 +49,9 @@ class MakePrediction(Resource):
 # curl -v -X POST "http://localhost:5000/predict" -H "accept: */*" -H "Content-Type: application/json" -d @./dados.json
 api.add_resource(MakePrediction, '/predict')
 
+@app.route('/')
+def home():
+    return "API ONLINE. Acessasr o endpoint: /predict"
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
