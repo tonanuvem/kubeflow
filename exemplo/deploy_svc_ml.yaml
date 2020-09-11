@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fiapml
-          image: "tonanuvem/kfserving-perfil-aluno-custom-model"
+          image: "tonanuvem/ml-perfil-aluno-custom-model"
           ports:
             - name: http
               containerPort: 80
