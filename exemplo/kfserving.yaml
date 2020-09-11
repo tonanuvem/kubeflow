@@ -9,11 +9,4 @@ spec:
     predictor:
       custom:
         container:
-          image: tonanuvem/ml-perfil-aluno-custom-model
-          resources:
-            requests:
-              memory: "4096Mi"
-              cpu: "250m"
-            limits:
-              memory: "4096Mi"
-              cpu: "500m"  
+          image: tonanuvem/ml-perfil-aluno-custom-model 
