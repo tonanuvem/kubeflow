@@ -12,3 +12,4 @@ Katacoda exemplos : https://katacoda.com/kubeflow/
 
 Deploy: https://github.com/kubeflow/kfserving/tree/master/docs/samples/sklearn
 http://www.pattersonconsultingtn.com/blog/deploying_huggingface_with_kfserving.html
+https://mlinproduction.com/docker-for-ml-part-4/
