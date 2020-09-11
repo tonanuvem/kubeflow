@@ -42,6 +42,7 @@ class MakePrediction(Resource):
             '_PERFIL_CALCULADO': prediction
         })
     
+    @staticmethod
     def get():
         return "API do Modelo está online. Para fazer uma previsão, deve-se enviar um POST."
 
