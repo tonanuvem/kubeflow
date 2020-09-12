@@ -12,7 +12,7 @@ echo " > Acessar o UI do Kubeflow"
 export INGRESS_HOST=$(curl -s checkip.amazonaws.com)
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
 echo "Verificando se o PROFILE está RUNNING : $ kubectl get pod -n kubeflow | grep profile"
-echo "Aguardando profiles-deployment (geralmente 4 min): 2/2 Running"
+echo "Aguardando profiles-deployment (geralmente 4 min): "
 while [ "$(kubectl get pod -n kubeflow | grep profile | grep Running | wc -l)" != "1" ]; do
   printf "."
   sleep 1
