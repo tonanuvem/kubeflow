@@ -19,7 +19,7 @@ spec:
           image: "tonanuvem/ml-perfil-aluno-custom-model"
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 5000
 ---
 kind: Service
 apiVersion: v1
@@ -30,7 +30,7 @@ spec:
     app: fiapml
   ports:
     - protocol: "TCP"
-      port: 80
-      targetPort: 80
+      port: 5000
+      targetPort: 5000
       nodePort: 32000
   type: NodePort
