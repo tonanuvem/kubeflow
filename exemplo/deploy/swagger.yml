@@ -63,9 +63,9 @@ paths:
               TAREFAS_ONLINE:
                 type: integer
                 description: número de tarefas online entregues pelo estudante
-              TAREFAS_ONLINE:
+              FALTAS:
                 type: integer
                 description: número de faltas acumuladas do estudante (todas disciplinas)
       responses:
         201:
-          description: Successfully created message
+          description: Successfully created predict
