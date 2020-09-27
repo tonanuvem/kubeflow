@@ -1,13 +1,13 @@
-echo "Digite suas credenciais da AWS: (finalizar com EOL)"
+echo "Digite suas credenciais da AWS: (finalizar escrevendo FIM)"
 mkdir ~/.aws/
 # configurar regiao aws
-cat >> ~/.aws/config << EOL
+cat >> ~/.aws/config << FIM
 [default]
 region=us-west-2
 output=json
-EOL
+FIM
 # inserir credenciais
-cat >> ~/.aws/credentials << EOL
+cat >> ~/.aws/credentials << FIM
 
 aws eks --region us-east-1 update-kubeconfig --name eksfiap
 
