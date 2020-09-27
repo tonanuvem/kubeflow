@@ -29,7 +29,7 @@ export AWS_CLUSTER_NAME=eksfiap
 # mkdir ${AWS_CLUSTER_NAME} && cd ${AWS_CLUSTER_NAME}
    
 # kfctl apply -V -f ${CONFIG_URI}
-kfctl apply -V -f kfctl_aws.yaml
+kfctl apply -V -f eks_kfctl_aws.yaml
 
 echo " $ kubectl get pod --all-namespaces"
 kubectl get pod --all-namespaces
