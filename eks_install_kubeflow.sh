@@ -9,6 +9,8 @@ EOL
 # inserir credenciais
 cat >> ~/.aws/credentials << EOL
 
+aws eks --region us-east-1 update-kubeconfig --name eksfiap
+
 # Installation pre-reqs
 # eksctl
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
