@@ -121,6 +121,8 @@ spec:
 ---
 EOF
 
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.20/samples/addons/kiali.yaml
+
 # 2. Apply the following configuration to expose Kiali:
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
