@@ -1,5 +1,5 @@
 # https://azure.github.io/kubeflow-aks/main/docs/deployment-options/vanilla-installation/
-# grep -Rnw '/path/to/somewhere/' -e 'pattern'
+# grep -Rnw '/path/to/somewhere/' -e 'string procurada'
 # grep -Rnw . -e 'kvAppName'
 
 echo "Clonando o repo: kubeflow-aks"
